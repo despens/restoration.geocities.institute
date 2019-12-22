@@ -18,8 +18,8 @@ var no = 15; // snow number
 var speed = 5; // smaller number moves the snow faster
 var snowflake = "triplebacks/snow.gif";
 
-var ns4up = (document.layers) ? 1 : 0;  // browser sniffer
-var ie4up = (document.all) ? 1 : 0;
+var ns4up = false; // (document.layers) ? 1 : 0;  // browser sniffer
+var ie4up = true; // (document.all) ? 1 : 0;
 var dx, xp, yp;    // coordinate and position variables
 var am, stx, sty;  // amplitude and step variables
 var i, doc_width = 800, doc_height = 600;
@@ -96,8 +96,8 @@ doc_width = document.body.clientWidth;
 doc_height = document.body.clientHeight;
 }
 dx[i] += stx[i];
-document.all["dot"+i].style.pixelTop = yp[i];
-document.all["dot"+i].style.pixelLeft = xp[i] + am[i]*Math.sin(dx[i]);
+document.all["dot"+i].style.top = yp[i];
+document.all["dot"+i].style.left = xp[i] + am[i]*Math.sin(dx[i]);
 }
 setTimeout("snowIE()", speed);
 }
@@ -154,11 +154,12 @@ snowIE();
 
 <Br>
 <Br>
-<center><embed 
-src="http://www.geocities.com/kitt35_35/midis/the-rose-1.mid"
-autostart=true></noembed>
-<bgsound 
-src="http://www.geocities.com/kitt35_35/midis/the-rose-1.mid">
+<center>
+<audio autoplay loop controls>
+    <source src="the-rose-1.mid" type="audio/midi">
+    <source src="the-rose-1.mid.oga" type="audio/ogg codecs=&quot;vorbis&quot;">
+    <source src="the-rose-1.mid.mp3" type="audio/mpeg">
+</audio>
 </center>
 <Br>
 <Br>

@@ -10,53 +10,53 @@
 
 
 
-.F1 {filter: glow(Color=#FF8000,Strength=6);
+.F1 {filter: drop-shadow(0 0 6px #ff8000); /* glow(Color=#FF8000,Strength=6) /*
 
      width=300px;
 
-     height=25px;}
+     height=25px;*/}
 
      
 
-.F2 {filter: glow(Color=#00FF00,Strength=6);
+.F2 {filter: drop-shadow(0px 0px 6px #00ff00); /* glow(Color=#00FF00,Strength=6);
 
      width=300px;
 
-     height=25px;}
+     height=25px;*/}
 
      
 
-.F3 {filter: glow(Color=#0080FF,Strength=6);
+.F3 {filter: drop-shadow(0px 0px 6px #0080ff); /* glow(Color=#0080FF,Strength=6);
 
      width=300px;
 
-     height=25px;}
+     height=25px; */}
 
 
 
 
 
-.F4 {filter: glow(Color=#FFffoo,Strength=6);
+.F4 {filter: drop-shadow(0px 0px 6px #ffff00); /* glow(Color=#FFffoo,Strength=6);
 
      width=300px;
 
-     height=25px;}
+     height=25px; */}
 
      
 
-.F5 {filter: glow(Color=#00FFff,Strength=6);
+.F5 {filter: drop-shadow(0px 0px 6px #00ffff); /* glow(Color=#00FFff,Strength=6);
 
      width=300px;
 
-     height=25px;}
+     height=25px;*/}
 
      
 
-.F6 {filter: glow(Color=#ffooff,Strength=6);
+.F6 {filter: drop-shadow(0px 0px 6px #ff00ff); /* glow(Color=#ffooff,Strength=6);
 
      width=300px;
 
-     height=25px;}
+     height=25px;*/}
 
 
 
@@ -102,7 +102,7 @@ var F = 'F1'
 
 function doThing(){
 
-   if (document.getElementById&&document.all) {   
+   if (document.getElementById) {   
 
       ok =  true
 
@@ -118,15 +118,15 @@ function doThing(){
 
       if (i==5) F = 'F5'
 
-      if (i==6) F = 'F6'  
+      if (i==6) F = 'F6'
 
 
 
-      YammaYamma.className=F
+      document.getElementById('YammaYamma').className=F;
 
       if (i > 5) i = 0
 
-      timer=setTimeout('doThing()', rate)
+      timer=setTimeout('doThing()', rate);
 
    }         
 
@@ -200,7 +200,7 @@ document.write(date + ", " + year + " ");
 
 <!-- Begin
 function clock() {
-if (!document.layers && !document.all) return;
+//if (!document.layers && !document.all) return;
 var digital = new Date();
 var hours = digital.getHours();
 var minutes = digital.getMinutes();
@@ -212,13 +212,9 @@ if (hours == 0) hours = 12;
 if (minutes <= 9) minutes = "0" + minutes;
 if (seconds <= 9) seconds = "0" + seconds;
 dispTime = hours + ":" + minutes + ":" + seconds + " " + amOrPm;
-if (document.layers) {
-document.layers.pendule.document.write(dispTime);
-document.layers.pendule.document.close();
-}
-else
-if (document.all)
-pendule.innerHTML = dispTime;
+
+// pendule.innerHTML = dispTime;
+document.getElementById('pendule').innerHTML = dispTime;
 setTimeout("clock()", 1000);
 }
 //  End -->
@@ -238,11 +234,11 @@ setTimeout("clock()", 1000);
 
         <font face="Arial" size="4" color="#FFFFFF">
 
-        <p id="YammaYamma">
+        <span id="YammaYamma">
 
         <b>Welcome to our <BR> little corner of the world</b>
 
-        </p>
+        </span>
 
         </font>
 
@@ -253,7 +249,7 @@ setTimeout("clock()", 1000);
 <td width=29%>
  
 <a href="http://www.wunderground.com/global/stations/94608.html" target="main">
-<img src="http://banners.wunderground.com/banner/gizmotemp/global/stations/94608.gif" height=41 width=127 align="right"></a>
+<img src="94608.gif" height=41 width=127 align="right"></a>
 
 <center>
 

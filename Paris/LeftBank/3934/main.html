@@ -174,7 +174,7 @@ var speed = 10; // smaller number moves the snow faster
 var snowflake = "snow1.gif";
 
 var ns4up = (document.layers) ? 1 : 0;  // browser sniffer
-var ie4up = (document.all) ? 1 : 0;
+var ie4up = true; //(document.all) ? 1 : 0;
 var dx, xp, yp;    // coordinate and position variables
 var am, stx, sty;  // amplitude and step variables
 var i, doc_width = 800, doc_height = 600;
@@ -241,8 +241,8 @@ doc_width = document.body.clientWidth;
 doc_height = document.body.clientHeight;
 }
 dx[i] += stx[i];
-document.all["dot"+i].style.pixelTop = yp[i];
-document.all["dot"+i].style.pixelLeft = xp[i] + am[i]*Math.sin(dx[i]);
+document.all["dot"+i].style.top = yp[i];
+document.all["dot"+i].style.left = xp[i] + am[i]*Math.sin(dx[i]);
 }
 setTimeout("snowIE()", speed);
 }
@@ -326,14 +326,8 @@ Yep...
 
 <BR>
  
-<!-- StatCounter.com Code -->
-<SCRIPT TYPE="text/javascript" LANGUAGE="javascript">
-usr="therodent";
-</SCRIPT>
-<SCRIPT TYPE="text/javascript" LANGUAGE="javascript" src="http://www.statcounter.com/counter/frames.js"></SCRIPT>
-<NOSCRIPT><A HREF="http://www.statcounter.com" TARGET="_top"><IMG
-SRC="http://www.statcounter.com/counter/counter.pl?usr=therodent&java=disabled" ALT="StatCounter.com" BORDER=0></A></NOSCRIPT>
-<!-- End of StatCounter.com Code -->
+<a href="http://www.freehitcounters.biz/" target="_blank"><img alt="free hit counters" src="http://www.freehitcounters.biz/counter.php?id=georest01" border="0"></a>
+<!-- <br />today<a href="http://www.kaiun-tatsujin.com/" target="_blank"><img alt="powerstone" src="http://www.freehitcounters.biz/counter.php?id=georest01&mode=today" border="0"></a>yesterday<a href="http://www.xn--gckj5d1ktb3488cn4q.jp/" target="_blank"><img alt="counter" src="http://www.freehitcounters.biz/counter.php?id=georest01&mode=yesterday" border="0"></a> -->
  
 <BR>
 
