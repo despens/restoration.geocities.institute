@@ -1,0 +1,299 @@
+<html>
+<head>
+<title>*~* Yuki's Wonderful World *~*</title>
+<meta http-equiv="Page-Enter" content="blendTrans(Duration=4)">
+
+<meta name="generator" content="Created Using Yahoo! PageBuilder 2.61.65">
+<meta name="author" content="Yuki <hello_kitty521@yahoo.com>">
+<EMBED SRC="http://www.geocities.com/hello_kitty521/snowman.mid" LOOP=TRUE AUTOSTART=TRUE HIDDEN=TRUE>
+<NOEMBED><BGSOUND SRC="http://www.geocities.com/hello_kitty521/snowman.mid" LOOP=INFINITE></NOEMBED>
+</EMBED>
+</head>
+<body background="http://www.geocities.com/hello_kitty521/bg-snowground.jpg" bgcolor="#FFFFFF" link="#0000FF" vlink="#FF0000" text="#000000"
+ onLoad="window.onresize=new Function('if (navigator.appVersion==\'Netscape\') history.go(0);');">
+<!-- following code added by server. PLEASE REMOVE -->
+<!-- preceding code added by server. PLEASE REMOVE -->
+<div id="root" style="position:absolute;top:0;left:0;width:664px;height:469px">
+<div style="position:absolute;left:34;top:25;width:127;height:49;">
+<table width=127 height=49 border=0 cellpadding=0 cellspacing=0><tr valign="top">
+	<td><img height=49 width=127 src="http://www.geocities.com/hello_kitty521/welcome-02.gif" border=0 ></td>
+</tr></table></div>
+<div style="position:absolute;left:105;top:112;width:380;height:285;">
+<table width=380 height=285 border=0 cellpadding=0 cellspacing=0><tr valign="top">
+	<td><img height=285 width=380 src="http://www.geocities.com/hello_kitty521/whitehell01.jpg" border=0 ></td>
+</tr></table></div>
+<div style="position:absolute;left:571;top:335;width:70;height:60;">
+<table width=70 height=60 border=0 cellpadding=0 cellspacing=0><tr valign="top">
+	<td><a href="http://www.geocities.com/hello_kitty521/main_page.html"><img height=60 width=70 src="http://www.geocities.com/hello_kitty521/blob-enter.gif" border=0 ></a></td>
+</tr></table></div>
+<div style="position:absolute;left:8;top:8;width:150;height:150;">
+<table width=150 height=150 border=0 cellpadding=0 cellspacing=0><tr valign="top">
+	<td><!-- snow -->
+<script language=javascript>
+function click() {
+if (event.button==2) {
+window.external.addFavorite('http://www.geocities.com/hello_kitty521',"Yuki's Wonderful World")
+}
+}
+document.onmousedown=click
+// -->
+</script>
+
+<script language="JavaScript1.2">
+
+  //Configure below to change URL path to the snow image
+  var snowsrc="snow.gif"
+  // Configure below to change number of snow to render
+  var no = 20;
+
+  var ns4up = (document.layers) ? 1 : 0;  // browser sniffer
+  var ie4up = (document.all) ? 1 : 0;
+  var ns6up = (document.getElementById&&!document.all) ? 1 : 0;
+
+  var dx, xp, yp;    // coordinate and position variables
+  var am, stx, sty;  // amplitude and step variables
+  var i, doc_width = 800, doc_height = 600;
+  
+  if (ns4up||ns6up) {
+    doc_width = self.innerWidth;
+    doc_height = self.innerHeight;
+  } else if (ie4up) {
+    doc_width = document.body.clientWidth;
+    doc_height = document.body.clientHeight;
+  }
+
+  dx = new Array();
+  xp = new Array();
+  yp = new Array();
+  am = new Array();
+  stx = new Array();
+  sty = new Array();
+  
+  for (i = 0; i < no; ++ i) {  
+    dx[i] = 0;                        // set coordinate variables
+    xp[i] = Math.random()*(doc_width-50);  // set position variables
+    yp[i] = Math.random()*doc_height;
+    am[i] = Math.random()*20;         // set amplitude variables
+    stx[i] = 0.02 + Math.random()/10; // set step variables
+    sty[i] = 0.7 + Math.random();     // set step variables
+    if (ns4up) {                      // set layers
+      if (i == 0) {
+        document.write("<layer name=\"dot"+ i +"\" left=\"15\" top=\"15\" visibility=\"show\"><a href=\"http://dynamicdrive.com/\"><img src='"+snowsrc+"' border=\"0\"></a></layer>");
+      } else {
+        document.write("<layer name=\"dot"+ i +"\" left=\"15\" top=\"15\" visibility=\"show\"><img src='"+snowsrc+"' border=\"0\"></layer>");
+      }
+    } else if (ie4up||ns6up) {
+      if (i == 0) {
+        document.write("<div id=\"dot"+ i +"\" style=\"POSITION: absolute; Z-INDEX: "+ i +"; VISIBILITY: visible; TOP: 15px; LEFT: 15px;\"><a href=\"http://dynamicdrive.com\"><img src='"+snowsrc+"' border=\"0\"></a></div>");
+      } else {
+        document.write("<div id=\"dot"+ i +"\" style=\"POSITION: absolute; Z-INDEX: "+ i +"; VISIBILITY: visible; TOP: 15px; LEFT: 15px;\"><img src='"+snowsrc+"' border=\"0\"></div>");
+      }
+    }
+  }
+  
+  function snowNS() {  // Netscape main animation function
+    for (i = 0; i < no; ++ i) {  // iterate for every dot
+      yp[i] += sty[i];
+      if (yp[i] > doc_height-50) {
+        xp[i] = Math.random()*(doc_width-am[i]-30);
+        yp[i] = 0;
+        stx[i] = 0.02 + Math.random()/10;
+        sty[i] = 0.7 + Math.random();
+        doc_width = self.innerWidth;
+        doc_height = self.innerHeight;
+      }
+      dx[i] += stx[i];
+      document.layers["dot"+i].top = yp[i];
+      document.layers["dot"+i].left = xp[i] + am[i]*Math.sin(dx[i]);
+    }
+    setTimeout("snowNS()", 10);
+  }
+
+  function snowIE_NS6() {  // IE and NS6 main animation function
+    for (i = 0; i < no; ++ i) {  // iterate for every dot
+      yp[i] += sty[i];
+      if (yp[i] > doc_height-50) {
+        xp[i] = Math.random()*(doc_width-am[i]-30);
+        yp[i] = 0;
+        stx[i] = 0.02 + Math.random()/10;
+        sty[i] = 0.7 + Math.random();
+        doc_width = ns6up?window.innerWidth : document.body.clientWidth;
+        doc_height = ns6up?window.innerHeight : document.body.clientHeight;
+      }
+      dx[i] += stx[i];
+      if (ie4up){
+      document.all["dot"+i].style.pixelTop = yp[i];
+      document.all["dot"+i].style.pixelLeft = xp[i] + am[i]*Math.sin(dx[i]);
+      }
+      else if (ns6up){
+      document.getElementById("dot"+i).style.top=yp[i];
+      document.getElementById("dot"+i).style.left=xp[i] + am[i]*Math.sin(dx[i]);
+      }   
+    }
+    setTimeout("snowIE_NS6()", 10);
+  }
+
+  if (ns4up) {
+    snowNS();
+  } else if (ie4up||ns6up) {
+    snowIE_NS6();
+  }
+
+</script></td>
+</tr></table></div>
+<div style="position:absolute;left:485;top:106;width:150;height:150;">
+<table width=150 height=150 border=0 cellpadding=0 cellspacing=0><tr valign="top">
+	<td><!-- buttom -->
+<SCRIPT LANGUAGE="JavaScript">
+
+// set speed of banner (pause in milliseconds between addition of new character)
+var speed = 10 
+
+// decrease value to increase speed (must be positive)
+// set pause between completion of message and beginning of following message
+var pause = 1500 
+
+// increase value to increase pause
+// set initial values
+var timerID = null
+var bannerRunning = false
+
+// create array
+var ar = new Array()
+
+// assign the strings to the array's elements
+ar[0] = "='.'= Welcome to Yuki's Wonderful World..."
+ar[1] = " ~ Feel free to look around ~"
+ar[2] = "Don't forget to sign my guestbook before you leave***"
+ar[3] = "Thanks a lot!!! ^o^"
+ar[4] = "~~~ E N J O Y ~~~"
+// assign index of current message
+var message = 0
+
+// empty string initialization
+var state = ""
+
+// no value is currently being displayed
+clearState()
+
+// stop the banner if it is currently running
+function stopBanner() {	
+	// if banner is currently running	
+	if (bannerRunning)		
+	// stop the banner		
+	clearTimeout(timerID)	
+	// timer is now stopped	
+	timerRunning = false
+}
+
+// start the banner
+function startBanner() {	
+	// make sure the banner is stopped	
+	stopBanner()	
+	// start the banner from the current position	
+	showBanner()
+}
+
+// assign state a string of "0" characters of the length of the current message
+function clearState() {	
+	// initialize to empty string	
+	state = ""	
+	// create string of same length containing 0 digits	
+	for (var i = 0; i < ar[message].length; ++i) {		
+		state += "0"	
+	}
+}
+
+// display the current message
+function showBanner() {	
+	// if the current message is done	
+	if (getString()) {		
+		// increment message		
+		message++		
+		// if new message is out of range wrap around to first message		
+	if (ar.length <= message)			
+		message = 0		
+		// new message is first displayed as empty string		
+		clearState()		
+		// display next character after pause milliseconds		
+		timerID = setTimeout("showBanner()", pause)	
+	} 
+	else {		
+		// initialize to empty string		
+		var str = ""		
+		// built string to be displayed (only character selected thus far are displayed)		
+	for (var j = 0; j < state.length; ++j) {			
+		str += (state.charAt(j) == "1") ? ar[message].charAt(j) : "     "		
+	}		
+	// partial string is placed in status bar		
+	window.status = str		
+	// add another character after speed milliseconds		
+	timerID = setTimeout("showBanner()", speed)	
+	}
+}
+
+function getString() {	
+	// set variable to true (it will stay true unless proven otherwise)	
+	var full = true	
+	// set variable to false if a free space is found in string (a not-displayed char)	
+	for (var j = 0; j < state.length; ++j) {		
+		// if character at index j of current message has not been placed in displayed string		
+		if (state.charAt(j) == 0)			
+		full = false	
+	}	
+	// return true immediately if no space found (avoid infinitive loop later)	
+	if (full) return true	
+	// search for random until free space found (braoken up via break statement)	
+	while (1) {		
+		// a random number (between 0 and state.length - 1 == message.length - 1)		
+		var num = getRandom(ar[message].length)		
+		// if free space found break infinitive loop		
+	if (state.charAt(num) == "0")			
+		break	
+	}	
+	// replace the 0 character with 1 character at place found	
+	state = state.substring(0, num) + "1" + state.substring(num + 1, state.length)	
+	// return false because the string was not full (free space was found)	
+	return false
+}
+
+function getRandom(max) {	
+	// create instance of current date	
+	var now = new Date()		
+	// create a random number (good generator)	
+	var num = now.getTime() * now.getSeconds() * Math.random()	
+	// cut random number to value between 0 and max - 1, inclusive	
+	return num % max
+}
+startBanner()
+// -->
+</SCRIPT></td>
+</tr></table></div>
+<div style="position:absolute;left:56;top:417;width:32;height:32;">
+<table width=32 height=32 border=0 cellpadding=0 cellspacing=0><tr valign="top">
+	<td><img height=32 width=32 src="http://www.geocities.com/hello_kitty521/ie.gif" border=0 ></td>
+</tr></table></div>
+<div style="position:absolute;left:105;top:425;width:547;height:32;">
+<table width=547 height=32 border=0 cellpadding=0 cellspacing=0><tr valign="top">
+	<td><font color="#9985FF" face="Verdana" size="-2"><span style="font-size:10">If you don't wish to wait for the Flash to load or you don't see animation above, Please </span></font><a href="http://www.geocities.com/hello_kitty521/main_page.html"><font color="#9985FF" face="Verdana" size="-2"><span style="font-size:10">click here</span></font></a><font color="#9985FF" face="Verdana" size="-2"><span style="font-size:10"> to enter. This site is best viewed with Internet Explorer 5.o+ at 8oox6oo or higher resolution.</span></font></td>
+</tr></table></div>
+<div style="position:absolute;left:175;top:15;width:150;height:150;">
+<table width=150 height=150 border=0 cellpadding=0 cellspacing=0><tr valign="top">
+	<td><!-- Flash -->
+<OBJECT classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+	codebase="http://active.macromedia.com/flash2/cabs/swflash.cab#version=4,0,0,0"
+	ID=yuki WIDTH=468 HEIGHT=60>
+	<PARAM NAME=movie VALUE="yuki.swf">
+	<PARAM NAME=quality VALUE=high>
+	<PARAM NAME=bgcolor VALUE=#FF80C0>
+	<EMBED src="yuki.swf" quality=high bgcolor=#FF80C0
+		WIDTH=468 HEIGHT=60 TYPE="application/x-shockwave-flash"
+		PLUGINSPAGE="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash">
+	</EMBED>
+</OBJECT></td>
+</tr></table></div>
+</div>
+</body>
+</html>
+<!-- text below generated by server. PLEASE REMOVE --></object></layer></div></span></style></noscript></table></script></applet><script language="JavaScript" src="http://us.i1.yimg.com/us.yimg.com/i/mc/mc.js"></script><script language="JavaScript" src="http://us.js2.yimg.com/us.js.yimg.com/lib/smb/js/hosting/cp/js_source/geov2_001.js"></script><script language="javascript">geovisit();</script><noscript><img src="http://visit.geocities.yahoo.com/visit.gif?aa0000000000" alt="setstats" border="0" width="1" height="1"></noscript>
+<IMG SRC="http://geo.yahoo.com/serv?s=00000000&t=0000000000&f=aa-a0" ALT=1 WIDTH=1 HEIGHT=1>

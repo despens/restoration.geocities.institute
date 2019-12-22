@@ -1,0 +1,182 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<body>
+<!-- following code added by server. PLEASE REMOVE -->
+<!-- preceding code added by server. PLEASE REMOVE -->
+<BODY BACKGROUND="triplebacks/cntrybg11a.jpg" BGCOLOR="#C39178" TEXT="#ECE7E3" LINK="#ECE7E3" VLINK="#ECE7E3" ALINK="#ECE7E3">
+
+<script language="JavaScript1.2">
+<!-- This cool script is copyright Altan, visit his site! -->
+<!-- http://www.altan.hr/snow -->
+
+<!-- This script is provided free at Lissa Explains it All -->
+<!-- http://www.lissaexplains.com -->
+
+<!-- Begin
+var no = 15; // snow number
+var speed = 5; // smaller number moves the snow faster
+var snowflake = "triplebacks/snow.gif";
+
+var ns4up = (document.layers) ? 1 : 0;  // browser sniffer
+var ie4up = (document.all) ? 1 : 0;
+var dx, xp, yp;    // coordinate and position variables
+var am, stx, sty;  // amplitude and step variables
+var i, doc_width = 800, doc_height = 600;
+if (ns4up) {
+doc_width = self.innerWidth;
+doc_height = self.innerHeight;
+} else if (ie4up) {
+doc_width = document.body.clientWidth;
+doc_height = document.body.clientHeight;
+}
+dx = new Array();
+xp = new Array();
+yp = new Array();
+am = new Array();
+stx = new Array();
+sty = new Array();
+for (i = 0; i < no; ++ i) {  
+dx[i] = 0;                        // set coordinate variables
+xp[i] = Math.random()*(doc_width-50);  // set position variables
+yp[i] = Math.random()*doc_height;
+am[i] = Math.random()*20;         // set amplitude variables
+stx[i] = 0.02 + Math.random()/10; // set step variables
+sty[i] = 0.7 + Math.random();     // set step variables
+if (ns4up) {                      // set layers
+if (i == 0) {
+document.write("<layer name=\"dot"+ i +"\" left=\"15\" ");
+document.write("top=\"15\" visibility=\"show\"><img src=\"");
+document.write(snowflake + "\" border=\"0\"></layer>");
+} else {
+document.write("<layer name=\"dot"+ i +"\" left=\"15\" ");
+document.write("top=\"15\" visibility=\"show\"><img src=\"");
+document.write(snowflake + "\" border=\"0\"></layer>");
+   }
+} else if (ie4up) {
+if (i == 0) {
+document.write("<div id=\"dot"+ i +"\" style=\"POSITION: ");
+document.write("absolute; Z-INDEX: "+ i +"; VISIBILITY: ");
+document.write("visible; TOP: 15px; LEFT: 15px;\"><img src=\"");
+document.write(snowflake + "\" border=\"0\"></div>");
+} else {
+document.write("<div id=\"dot"+ i +"\" style=\"POSITION: ");
+document.write("absolute; Z-INDEX: "+ i +"; VISIBILITY: ");
+document.write("visible; TOP: 15px; LEFT: 15px;\"><img src=\"");
+document.write(snowflake + "\" border=\"0\"></div>");
+      }
+   }
+}
+function snowNS() {  // Netscape main animation function
+for (i = 0; i < no; ++ i) {  // iterate for every dot
+yp[i] += sty[i];
+if (yp[i] > doc_height-50) {
+xp[i] = Math.random()*(doc_width-am[i]-30);
+yp[i] = 0;
+stx[i] = 0.02 + Math.random()/10;
+sty[i] = 0.7 + Math.random();
+doc_width = self.innerWidth;
+doc_height = self.innerHeight;
+}
+dx[i] += stx[i];
+document.layers["dot"+i].top = yp[i];
+document.layers["dot"+i].left = xp[i] + am[i]*Math.sin(dx[i]);
+}
+setTimeout("snowNS()", speed);
+}
+function snowIE() {  // IE main animation function
+for (i = 0; i < no; ++ i) {  // iterate for every dot
+yp[i] += sty[i];
+if (yp[i] > doc_height-50) {
+xp[i] = Math.random()*(doc_width-am[i]-30);
+yp[i] = 0;
+stx[i] = 0.02 + Math.random()/10;
+sty[i] = 0.7 + Math.random();
+doc_width = document.body.clientWidth;
+doc_height = document.body.clientHeight;
+}
+dx[i] += stx[i];
+document.all["dot"+i].style.pixelTop = yp[i];
+document.all["dot"+i].style.pixelLeft = xp[i] + am[i]*Math.sin(dx[i]);
+}
+setTimeout("snowIE()", speed);
+}
+if (ns4up) {
+snowNS();
+} else if (ie4up) {
+snowIE();
+}
+// End -->
+</script>
+
+<BR>
+<CENTER><TABLE BACKGROUND="triplebacks/cntrybg11b.jpg" BGCOLOR="#C39178" BORDER="1" BORDERCOLOR="#ECE7E3" WIDTH="90%" CELLPADDING="25" CELLSPACING="0">
+<TR>
+<TD WIDTH="100%">
+<P><CENTER><TABLE BACKGROUND="triplebacks/cntrybg11c.jpg" BGCOLOR="#C39178" BORDER="1" BORDERCOLOR="#654E3E" WIDTH="95%" CELLPADDING="5" CELLSPACING="0">
+<TR><TD WIDTH="100%">
+<Br>
+<Br>
+<center><img src="triplebacks/cntrybg11awel1.gif" alt="Welcome" width="211" height="377"><img src="triplebacks/cntrybg11awel2.gif" alt="Welcome" width="186" height="377"></center>
+<Br>
+<center><font color="white"size="6"><b>The 60s Gang</b></font></center>
+<center><img src="triplebacks/cntrybg11abar.gif" alt="divider" width="432" height="78"></center>
+<Br>
+<center><a href="http://www.geocities.com/kitt35_35/friends.html"><font color="white"size ="5"><b>The 60s Gang Page</b><br><br></a>
+<a href="http://www.geocities.com/kitt35_35/food.html"><b><img src="triplebacks/cntrybg11arecipes.jpg" alt="60sgang recipes"width="145"height="50" border="0"></a>
+<center><img src="triplebacks/cntrybg11abar.gif" alt="divider" width="432" height="78"></center>
+<Br>
+<Br><center>
+<img src="triplebacks/cntrybg11alinks.jpg"width="145"height="50" alt=friends home pages>
+<p>
+<a href="http://www.geocities.com/snoopi28_99/">Snoops World</a>
+<p>
+<a href="http://www.geocities.com/snoopb4/">Jans Place</a>
+<br></center>
+<center><img src="triplebacks/cntrybg11abar.gif" alt="divider" width="432" height="78"></center>
+<Br>
+<center><a href="http://www.geocities.com/kycol34/">Kays Home</a><br>
+<a href="http://www.geocities.com/Rain/Forest/9656/">White Feathers Realm</a>
+<br><a href="http://www.geocities.com/SunsetStrip/Underground/7730/">NoQuarters</a><br>
+<a href="http://www.geocities.com/ptgranny">Ptgrannys Home</a><br>
+<a href="http://www.geocities.com/boandbe">Bo's Home</a><br>
+<a href="http://www.geocities.com/kk206.html">Hacker 13 Home Course</a><br>
+<a href="http://www.geocities.com/cows5853/">Cows Home</a><br>
+<a href="http://geocities.com/p00hbear1024/">Amandas Drawings and Paintings</a><p>
+</center>
+<center><img src="triplebacks/cntrybg11abar.gif" alt="divider" width="432" height="78"></center>
+
+
+<center> <img src="triplebacks/cntrybg11assgrlogo.jpg" alt="Sunshine Graphics" width="145" height="50" border="0"></center>
+<Br>
+<Br>
+<center><img src="triplebacks/cntrybg11abar.gif" alt="divider" width="432" height="78"></center>
+
+<Br>
+<Br>
+<center><embed 
+src="http://www.geocities.com/kitt35_35/midis/the-rose-1.mid"
+autostart=true></noembed>
+<bgsound 
+src="http://www.geocities.com/kitt35_35/midis/the-rose-1.mid">
+</center>
+<Br>
+<Br>
+
+</TD>
+</TR>
+</TABLE>
+</CENTER>
+</TD>
+</TR>
+</TABLE>
+</CENTER>
+<BR>
+<BR>
+</BODY>
+</HTML>
+
+
+
+<!-- text below generated by server. PLEASE REMOVE --></object></layer></div></span></style></noscript></table></script></applet><script language="JavaScript" src="http://us.i1.yimg.com/us.yimg.com/i/mc/mc.js"></script><script language="JavaScript" src="http://us.js2.yimg.com/us.js.yimg.com/lib/smb/js/hosting/cp/js_source/geov2_001.js"></script><script language="javascript">geovisit();</script><noscript><img src="http://visit.geocities.yahoo.com/visit.gif?aa0000000000" alt="setstats" border="0" width="1" height="1"></noscript>
+<IMG SRC="http://geo.yahoo.com/serv?s=00000000&t=0000000000&f=aa-a0" ALT=1 WIDTH=1 HEIGHT=1>

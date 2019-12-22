@@ -1,0 +1,540 @@
+<html>
+
+<head>
+<title> Scroll page </title>
+<SCRIPT LANGUAGE="JavaScript">
+
+<!--
+
+  function event(year,month,date,person) {
+
+    this.year=year
+
+    this.month=month
+
+    this.date=date
+
+    this.person=person
+
+  }
+
+
+
+  function eventlist() {
+
+  }
+
+
+
+  blist=new eventlist()
+
+  blist[0]= new event(1971,0,03,"Chris Clark's Birthday")
+
+  blist[1]= new event(2002,0,12,"Tim and Rita's Aniversary")
+
+  blist[2]= new event(1968,1,02,"Tim Colliander's Birthday")
+
+  blist[3]= new event(82,1,06,"Muriel's Birthday { Rita's mum }")
+
+  blist[4]= new event(1997,1,20,"Ashley Johnson's Birthday")
+
+  blist[5]= new event(2000,2,09,"Natalie Obrecht's Birthday")
+
+  blist[6]= new event(1971,3,05,"Dawn Colliander's Birthday")
+
+  blist[7]= new event(1987,3,11,"Brendan Obrecht's Birthday")
+
+  blist[8]= new event(2000,3,22,"Peter and Nicole Armstrong's Aniversary")
+
+  blist[9]= new event(1942,3,24,"Bruce Colliander's Birthday")
+
+  blist[10]= new event(1966,3,30,"Bruce and Patricia Colliander's Aniversary")
+
+  blist[11]= new event(1968,5,12,"David Stengel's Birthday")
+
+  blist[12]= new event(1959,5,20,"Rita Colliander's Birthday")
+
+  blist[13]= new event(1972,5,24,"Nicole Armstrong's Birthday")
+
+  blist[14]= new event(2000,5,25,"Makayla's Birthday")
+
+  blist[15]= new event(1968,6,01,"Cory Johnson's Birthday")
+
+  blist[16]= new event(1983,6,06,"Brittany Alford's Birthday")
+
+  blist[17]= new event(1972,6,14,"Scott Wendt's Birthday")
+
+  blist[18]= new event(1943,6,19,"Patti Colliander's Birthday")
+
+  blist[19]= new event(1968,7,11,"Sonya Johnson's Birthday")
+
+  blist[20]= new event(1971,7,19,"Mike Friesen's Birthday")
+
+  blist[21]= new event(1993,8,18,"Cory and Sonya Johnson's Aniversary")
+
+  blist[22]= new event(1967,9,21,"Peter Armstrong's Birthday")
+
+  blist[23]= new event(1971,10,01,"Mike Mischke's Birthday")
+
+  blist[24]= new event(1971,10,29,"Cheryl Wendt's Birthday")
+
+  blist[25]= new event(1969,10,30,"David Ledstrom's Birthday")
+
+  blist[26]= new event(2001,0,01,"Scott and Cheryl Wendt's Aniversary")
+
+  blist[27]= new event(2002,2,30,"Robert and Lesley's Wedding")
+
+  blist[28]= new event(2002,6,20,"Lesley Shaw's Birthday")
+
+  blist[29]= new event(1961,8,15,"Johnno's Birthday")
+
+  blist[30]= new event(1948,11,10,"Robert's Birthday")
+
+  blist[31]= new event(1950,0,5,"Kathy's Birthday")
+
+
+  var now=new Date()
+
+  today=new Date(now.getYear(),now.getMonth(),now.getDate())   // today 0:00:00
+
+  function daysFromToday(sdate) {
+
+    return Math.round((sdate.getTime()-today.getTime())/(24*60*60*1000))
+
+  }
+
+
+
+  function writeNextevent(list) {
+
+    var daysToClosest=888
+
+    var closest
+
+    for (var i in list) {
+
+      thisDate=new Date(today.getYear(),list[i].month,list[i].date)
+
+      if (daysFromToday(thisDate)<0)
+
+        thisDate.setYear(today.getYear()+1)
+
+      if (daysFromToday(thisDate)<daysToClosest) {
+
+        daysToClosest=daysFromToday(thisDate)
+
+        closest=i
+
+      }
+
+    }
+
+    if (daysToClosest==0)
+
+      document.write("<B>Today is <BR> "+list[closest].person+" and it is number <BR> - "+(today.getYear()-list[closest].year)+" - Yeaaaaaa!</B><P>")
+
+    else if (daysToClosest==1)
+
+      document.write("Tomorrow will be <BR>"+list[closest].person+" <BR>and it will be number <BR> "+(today.getYear()-list[closest].year)+" !<P>")
+
+    else
+
+      document.write("<B>The next event will be <BR> "+list[closest].person+"<BR> in "+daysToClosest+" days.</B><P>")
+
+  }
+
+        
+
+// end hiding -->
+
+</SCRIPT>
+
+</head>
+
+
+
+<body bgcolor="#000000" text="#ffff00" link="#0080ff" vlink="#ff0000" alink="#ffffff">
+<!-- following code added by server. PLEASE REMOVE -->
+<!-- preceding code added by server. PLEASE REMOVE -->
+
+<div id="datacontainer" style="position:absolute;left:0;top:10;width:100%" onMouseover="scrollspeed=0" onMouseout="scrollspeed=cache">
+
+<!-- ADD SCROLLER COMMENT INSIDE HERE--------------------->
+
+<center>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+<SCRIPT LANGUAGE=Javascript>
+
+
+
+ calendar = new Date();
+
+ day = calendar.getDay();
+
+ month = calendar.getMonth();
+
+ date = calendar.getDate();
+
+ year = calendar.getYear();
+
+ if (year < 1000)
+
+ year+=1900
+
+ cent = parseInt(year/100);
+
+ g = year % 19;
+
+ k = parseInt((cent - 17)/25);
+
+ i = (cent - parseInt(cent/4) - parseInt((cent - k)/3) + 19*g + 15) % 30;
+
+ i = i - parseInt(i/28)*(1 - parseInt(i/28)*parseInt(29/(i+1))*parseInt((21-g)/11));
+
+ j = (year + parseInt(year/4) + i + 2 - cent + parseInt(cent/4)) % 7;
+
+ l = i - j;
+
+ emonth = 3 + parseInt((l + 40)/44);
+
+ edate = l + 28 - 31*parseInt((emonth/4));
+
+ emonth--;
+
+ var dayname = new Array ("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday");
+
+ var monthname = 
+
+ new Array ("January","February","March","April","May","June","July","August","September","October","November","December" );
+
+ document.write("<font face=verdana,arial size=2>");
+
+ document.write(dayname[day] + ", ");
+
+ document.write(monthname[month] + " ");
+
+ if (date< 10) document.write("0" + date + ", ");
+
+         else document.write(date + ", ");
+
+ document.write(year + "    <BR> <BR> <font color=FF0000>");
+
+ // Easter
+
+ if ((month == emonth) && (date == edate)) document.write("Easter Sunday (Western)   ");
+
+ // January
+
+ if ((month == 0) && (date == 1)) document.write("New Year's Day");
+
+ if ((month == 0) && (date == 1)) document.write("<BR>Scott and Cheryl Wendt's Aniversary");
+
+ if ((month == 0) && (date == 3)) document.write("Chris Clark's Birthday");
+
+ if ((month == 0) && (date == 5)) document.write("Kathleen Shaw's Birthday");
+
+ if ((month == 0) && (date == 12)) document.write("<BR>Tim and Rita Colliander's Aniversary");
+
+ // February
+
+ if ((month == 1) && (date == 2)) document.write("Groundhog Day");
+
+ if ((month == 1) && (date == 2)) document.write("<BR> Tim Colliander's Birthday");
+
+ if ((month == 1) && (date == 6)) document.write("Muriel's Birthday { Rita's mum }");
+
+ if ((month == 1) && (date == 14)) document.write(" Valentine's Day");
+
+ if ((month == 1) && (date== 20))  document.write("Ashley Johnson's Birthday");
+
+ if ((month == 1) && (date == 29)) document.write("Leap Day");
+
+ // March
+
+ if ((month == 2) && (date == 9)) document.write("Natalie Obrecht's Birthday");
+
+ if ((month == 2) && (date == 17)) document.write("St. Patrick's Day");
+
+ if ((month == 2) && (date == 30)) document.write("Robert and Lesley's Anniversary");
+
+ // April
+
+ if ((month == 3) && (date == 1)) document.write("April Fools' Day");
+
+ if ((month == 3) && (date == 5)) document.write("Dawn Colliander's Birthday");
+
+ if ((month == 3) && (date == 8)) document.write("Buddha born");
+
+ if ((month == 3) && (date == 11)) document.write("Brendan Obrecht's Birthday");
+
+ if ((month == 3) && (date == 15) && (day != 0)) document.write("Income Tax Day (USA),   ");
+
+ if ((month == 3) && (date == 16) && (day == 1)) document.write("Income Tax Day (USA) ");
+
+ if ((month == 3) && (date == 22)) document.write("Peter and Nicole Armstrong's Anniversary");
+
+ if ((month == 3) && (date == 24)) document.write("Bruce Colliander's Birthday");
+
+ if ((month == 3) && (date == 30)) document.write("Bruce and Patricia Colliander's Anniversary");
+
+ if ((month == 3) && (day == 0) && (date > 0) && (date< 8)) document.write("Daylight Savings Time Begins");
+
+ // May
+
+ if ((month == 4) && (date == 1)) document.write("May Day");
+
+ if ((month == 4) && (date == 5)) document.write("Cinco de Mayo (Mexico)");
+
+ if ((month == 4) && (day == 0) && (date > 7) && (date< 16)) document.write("Mother's Day");
+
+ if ((month == 4) && (day == 1) && (date > 24)) document.write("Memorial Day");
+
+ // June
+
+ if ((month == 5) && (date == 12)) document.write("David Stengel's Birthday");
+
+ if ((month == 5) && (date == 20)) document.write("Rita Colliander's Birthday");
+
+ if ((month == 5) && (date == 24)) document.write("Nicole Armstrong's Birthday");
+
+ if ((month == 5) && (date == 25)) document.write("Makayla's Birthday");
+
+ if ((month == 5) && (day == 0) && (date > 15) && (date< 24)) document.write("Father's Day");
+
+ // July
+
+ if ((month == 6) && (date == 1)) document.write("Cory Johnson's Birthday");
+
+ if ((month == 6) && (date == 4)) document.write("Independence Day (USA)");
+
+ if ((month == 6) && (date == 6)) document.write("Brittany Alford's Birthday");
+
+ if ((month == 6) && (date == 14)) document.write("Scott Wendt's Birthday");
+
+ if ((month == 6) && (date == 19)) document.write("Patti Colliander's Birthday");
+
+if ((month == 6) && (date == 20)) document.write("Lesley Shaw's Birthday");
+
+ // August
+
+ if ((month == 7) && (date == 11)) document.write("Sonya Johnson's Birthday");
+
+ if ((month == 7) && (date == 19)) document.write("Mike Friesen's Birthday");
+
+ // September
+
+ if ((month == 8) && (date == 15)) document.write("Johnno's Birthday"); 
+
+ if ((month == 8) && (date == 18)) document.write("Cory and Sonya Johnson's Anniversary");
+
+ if ((month == 8) && (day== 1)&& (date > 0) && (date< 8)) document.write("Labor Day (USA)");
+
+ // October
+
+ if ((month == 9) && (date == 21)) document.write("Peter Armstrong's Birthday");
+
+ if ((month == 9) && (day == 0) && (date > 24) && (date< 31)) document.write("Daylight Savings Time Ends");
+
+ if ((month == 9) && (day == 0) && (date == 31)) document.write("Daylight Savings Time Ends<BR>");
+
+ if ((month == 9) && (date == 31)) document.write("Halloween");
+
+ // November
+
+ if ((month == 10) && (date == 1)) document.write("Mike Mischke's Birthday");
+
+ if ((month == 10) && (date == 29)) document.write("Cheryl Wendt's Birthday");
+
+ if ((month == 10) && (date == 30)) document.write("David Ledstrom's Birthday");
+
+ if ((month == 10) && (day == 4) && (date > 23) && (date< 30)) document.write("Thanksgiving (USA)");
+
+ if ((month == 10) && (date == 30) && (day == 4)) document.write("Thanksgiving (USA)");
+
+ // December
+
+ if ((month == 11) && (date == 10)) document.write("Robert's Birthday");
+
+ if ((month == 11) && (date == 24)) document.write("Christmas Eve");
+
+ if ((month == 11) && (date == 25)) document.write("Christmas");
+
+ if ((month == 11) && (date == 26)) document.write("Boxing Day");
+
+ if ((month == 11) && (date == 31)) document.write("New Year's Eve");
+
+ document.write("</font>");
+
+//-->
+
+ </SCRIPT> 
+
+
+<br>
+<br>
+
+
+<table  width="98%" border="5" cellspacing="2" cellpadding="5" bgcolor="#00ffff" bordercolor="#000080">
+	<tr>
+		
+		<td  align="center">
+
+
+<font color=#ff0000>  Welcome to  <br> <font size="1">our little corner of the world</font>
+
+
+		 		</td>
+	</tr>
+</table>
+
+
+<br>
+<br>
+
+
+ <font color="#00ff00">
+
+<SCRIPT LANGUAGE="JavaScript">
+
+<!--  
+
+  writeNextevent(blist)
+
+// -->
+
+</SCRIPT>
+
+</font>
+
+<br>
+<br>
+
+<img src="aniag_lights4.gif" width="500" height="14" alt="Happy Holidays">
+
+<br>
+
+
+<table  width="98%" border="0" cellspacing="2" cellpadding="5" bgcolor="#000000" bordercolor="#ffff80">
+	<tr>
+		<!-- Row 1 Column 1 -->
+		<td  align="center">
+
+
+<font color=#ff0000>H</font><font color=#00ff00>A</font><font color=#ff0000>P</font><font color=#00ff00>P</font><font color=#ff0000>Y </font><font color=#00ff00> H</font><font color=#ff0000>O</font><font color=#00ff00>L</font><font color=#ff0000>I</font><font color=#00ff00>D</font><font color=#ff0000>A</font><font color=#00ff00>Y</font><font color=#ff0000>S</font>
+
+
+		 		</td>
+	</tr>
+</table>
+
+<br>
+
+<img src="aniag_lights4.gif" width="500" height="14" alt="Happy Holidays">
+
+
+
+<br>
+<br>
+
+
+
+
+NEWS?
+<br>
+<br>
+Not much news at the moment....
+<br>
+getting ready for the mad rush of Christmas.
+<br>
+<br>
+
+
+<BR>
+
+Merry Christmas!
+
+<br>
+<br>
+Keep well & thanks for stopping by.
+<br>
+As always, see a mistake, have a comment, or just want to bug me...
+<br>
+
+ <A HREF="mailto:thelittlerodent@yahoo.com?subject=Web Page">
+E-mail the rodent
+</a>
+
+<br>
+<br>
+
+Remember this, if you see/saw something here...
+<br>
+Then I did something right.
+
+
+
+
+
+<br>
+<br>
+That's the end....
+<br>
+Let's start again.
+
+
+
+
+
+
+<!-- END SCROLLER CONTENT---------------------------------------->
+
+<div>
+
+<script language="JavaScript1.2">
+
+//<iframe> script by Dynamicdrive.com
+
+//Specify speed of scroll. Larger=faster (ie: 5)
+var scrollspeed=cache=2
+
+function initialize(){
+marqueeheight=document.all? parent.document.all.datamain.height : parent.document.getElementById("datamain").getAttribute("height")
+dataobj=document.all? document.all.datacontainer : document.getElementById("datacontainer")
+dataobj.style.top=5
+thelength=dataobj.offsetHeight
+scrolltest()
+}
+
+function scrolltest(){
+dataobj.style.top=parseInt(dataobj.style.top)-scrollspeed
+if (parseInt(dataobj.style.top)<thelength*(-1))
+dataobj.style.top=5
+setTimeout("scrolltest()",50)
+}
+
+window.onload=initialize
+
+</script>
+
+
+</center>
+
+
+
+</body>
+</html>
+<!-- text below generated by server. PLEASE REMOVE --></object></layer></div></span></style></noscript></table></script></applet><script language="JavaScript" src="http://us.i1.yimg.com/us.yimg.com/i/mc/mc.js"></script><script language="JavaScript" src="http://us.js2.yimg.com/us.js.yimg.com/lib/smb/js/hosting/cp/js_source/geov2_001.js"></script><script language="javascript">geovisit();</script><noscript><img src="http://visit.geocities.yahoo.com/visit.gif?aa0000000000" alt="setstats" border="0" width="1" height="1"></noscript>
+<IMG SRC="http://geo.yahoo.com/serv?s=00000000&t=0000000000&f=aa-a0" ALT=1 WIDTH=1 HEIGHT=1>

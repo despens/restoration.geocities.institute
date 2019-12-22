@@ -1,0 +1,361 @@
+<html>
+
+<head>
+
+<title>Welcome to our little corner of the world.</title>
+
+
+<body marginwidth="0" marginheight="0" leftmargin="0" topmargin="0" bgcolor="#000000" text="#FFFF00" link="#FFFFFF" vlink="#999999" alink="#FF66FF">
+<!-- following code added by server. PLEASE REMOVE -->
+<!-- preceding code added by server. PLEASE REMOVE -->
+
+
+
+<SCRIPT LANGUAGE="JavaScript">
+
+<!--
+
+  function event(year,month,date,person) {
+
+    this.year=year
+
+    this.month=month
+
+    this.date=date
+
+    this.person=person
+
+  }
+
+
+
+  function eventlist() {
+
+  }
+
+
+
+  blist=new eventlist()
+
+  blist[0]= new event(1971,0,03,"Chris Clark's Birthday")
+
+  blist[1]= new event(2002,0,12,"Tim and Rita's Aniversary")
+
+  blist[2]= new event(1968,1,02,"Tim Colliander's Birthday")
+
+  blist[3]= new event(82,1,06,"Muriel's Birthday { Rita's mum }")
+
+  blist[4]= new event(1997,1,20,"Ashley Johnson's Birthday")
+
+  blist[5]= new event(2000,2,09,"Natalie Obrecht's Birthday")
+
+  blist[6]= new event(1971,3,05,"Dawn Colliander's Birthday")
+
+  blist[7]= new event(1987,3,11,"Brendan Obrecht's Birthday")
+
+  blist[8]= new event(2000,3,22,"Peter and Nicole Armstrong's Aniversary")
+
+  blist[9]= new event(1942,3,24,"Bruce Colliander's Birthday")
+
+  blist[10]= new event(1966,3,30,"Bruce and Patricia Colliander's Aniversary")
+
+  blist[11]= new event(1968,5,12,"David Stengel's Birthday")
+
+  blist[12]= new event(1959,5,20,"Rita Colliander's Birthday")
+
+  blist[13]= new event(1972,5,24,"Nicole Armstrong's Birthday")
+
+  blist[14]= new event(2000,5,25,"Makayla's Birthday")
+
+  blist[15]= new event(1968,6,01,"Cory Johnson's Birthday")
+
+  blist[16]= new event(1983,6,06,"Brittany Alford's Birthday")
+
+  blist[17]= new event(1972,6,14,"Scott Wendt's Birthday")
+
+  blist[18]= new event(1943,6,19,"Patti Colliander's Birthday")
+
+  blist[19]= new event(1968,7,11,"Sonya Johnson's Birthday")
+
+  blist[20]= new event(1971,7,19,"Mike Friesen's Birthday")
+
+  blist[21]= new event(1993,8,18,"Cory and Sonya Johnson's Aniversary")
+
+  blist[22]= new event(1967,9,21,"Peter Armstrong's Birthday")
+
+  blist[23]= new event(1971,10,01,"Mike Mischke's Birthday")
+
+  blist[24]= new event(1971,10,29,"Cheryl Wendt's Birthday")
+
+  blist[25]= new event(1969,10,30,"David Ledstrom's Birthday")
+
+  blist[26]= new event(2001,0,01,"Scott and Cheryl Wendt's Aniversary")
+
+  blist[27]= new event(2002,2,30,"Robert and Lesley's Wedding")
+
+  blist[28]= new event(2002,6,20,"Lesley Shaw's Birthday")
+
+  blist[29]= new event(1961,8,15,"Johnno's Birthday")
+
+  blist[30]= new event(1948,11,10,"Robert's Birthday")
+
+  blist[31]= new event(1950,0,5,"Kathy's Birthday")
+
+
+  var now=new Date()
+
+  today=new Date(now.getYear(),now.getMonth(),now.getDate())   // today 0:00:00
+
+  function daysFromToday(sdate) {
+
+    return Math.round((sdate.getTime()-today.getTime())/(24*60*60*1000))
+
+  }
+
+
+
+  function writeNextevent(list) {
+
+    var daysToClosest=888
+
+    var closest
+
+    for (var i in list) {
+
+      thisDate=new Date(today.getYear(),list[i].month,list[i].date)
+
+      if (daysFromToday(thisDate)<0)
+
+        thisDate.setYear(today.getYear()+1)
+
+      if (daysFromToday(thisDate)<daysToClosest) {
+
+        daysToClosest=daysFromToday(thisDate)
+
+        closest=i
+
+      }
+
+    }
+
+    if (daysToClosest==0)
+
+      document.write("<B>Today is <BR> "+list[closest].person+" and it is number <BR> - "+(today.getYear()-list[closest].year)+" - Yeaaaaaa!</B><P>")
+
+    else if (daysToClosest==1)
+
+      document.write("Tomorrow will be <BR>"+list[closest].person+" <BR>and it will be number <BR> "+(today.getYear()-list[closest].year)+" !<P>")
+
+    else
+
+      document.write("<B>The next event will be <BR> "+list[closest].person+"<BR> in "+daysToClosest+" days.</B><P>")
+
+  }
+
+        
+
+// end hiding -->
+
+</SCRIPT>
+
+
+
+</head>
+
+
+
+<!-- Start Snow Script -->
+
+
+<SCRIPT LANGUAGE="JavaScript1.2">
+<!-- Begin
+var no = 20; // snow number
+var speed = 10; // smaller number moves the snow faster
+var snowflake = "snow1.gif";
+
+var ns4up = (document.layers) ? 1 : 0;  // browser sniffer
+var ie4up = (document.all) ? 1 : 0;
+var dx, xp, yp;    // coordinate and position variables
+var am, stx, sty;  // amplitude and step variables
+var i, doc_width = 800, doc_height = 600;
+if (ns4up) {
+doc_width = self.innerWidth;
+doc_height = self.innerHeight;
+} else if (ie4up) {
+doc_width = document.body.clientWidth;
+doc_height = document.body.clientHeight;
+}
+dx = new Array();
+xp = new Array();
+yp = new Array();
+am = new Array();
+stx = new Array();
+sty = new Array();
+for (i = 0; i < no; ++ i) {  
+dx[i] = 0;                        // set coordinate variables
+xp[i] = Math.random()*(doc_width-50);  // set position variables
+yp[i] = Math.random()*doc_height;
+am[i] = Math.random()*20;         // set amplitude variables
+stx[i] = 0.02 + Math.random()/10; // set step variables
+sty[i] = 0.7 + Math.random();     // set step variables
+if (ns4up) {                      // set layers
+if (i == 0) {
+document.write("<layer name=\"dot"+ i +"\" left=\"15\" top=\"15\" visibility=\"show\"><img src=\"" + snowflake + "\" border=\"0\"></layer>");
+} else {
+document.write("<layer name=\"dot"+ i +"\" left=\"15\" top=\"15\" visibility=\"show\"><img src=\"" + snowflake + "\" border=\"0\"></layer>");
+   }
+} else if (ie4up) {
+if (i == 0) {
+document.write("<div id=\"dot"+ i +"\" style=\"POSITION: absolute; Z-INDEX: "+ i +"; VISIBILITY: visible; TOP: 15px; LEFT: 15px;\"><img src=\"" + snowflake + "\" border=\"0\"></div>");
+} else {
+document.write("<div id=\"dot"+ i +"\" style=\"POSITION: absolute; Z-INDEX: "+ i +"; VISIBILITY: visible; TOP: 15px; LEFT: 15px;\"><img src=\"" + snowflake + "\" border=\"0\"></div>");
+      }
+   }
+}
+function snowNS() {  // Netscape main animation function
+for (i = 0; i < no; ++ i) {  // iterate for every dot
+yp[i] += sty[i];
+if (yp[i] > doc_height-50) {
+xp[i] = Math.random()*(doc_width-am[i]-30);
+yp[i] = 0;
+stx[i] = 0.02 + Math.random()/10;
+sty[i] = 0.7 + Math.random();
+doc_width = self.innerWidth;
+doc_height = self.innerHeight;
+}
+dx[i] += stx[i];
+document.layers["dot"+i].top = yp[i];
+document.layers["dot"+i].left = xp[i] + am[i]*Math.sin(dx[i]);
+}
+setTimeout("snowNS()", speed);
+}
+function snowIE() {  // IE main animation function
+for (i = 0; i < no; ++ i) {  // iterate for every dot
+yp[i] += sty[i];
+if (yp[i] > doc_height-50) {
+xp[i] = Math.random()*(doc_width-am[i]-30);
+yp[i] = 0;
+stx[i] = 0.02 + Math.random()/10;
+sty[i] = 0.7 + Math.random();
+doc_width = document.body.clientWidth;
+doc_height = document.body.clientHeight;
+}
+dx[i] += stx[i];
+document.all["dot"+i].style.pixelTop = yp[i];
+document.all["dot"+i].style.pixelLeft = xp[i] + am[i]*Math.sin(dx[i]);
+}
+setTimeout("snowIE()", speed);
+}
+if (ns4up) {
+snowNS();
+} else if (ie4up) {
+snowIE();
+}
+// End -->
+</script>
+
+
+<!-- End Snow Script -->
+
+
+
+<center>
+
+
+<!-- Start Chistmas banner -->
+
+
+<img src = "xmasbanner.gif" width="600" height="60" alt="Happy Holidays">
+
+
+<!-- End Chistmas banner-->
+
+
+
+<table width=98% cellspacing=10 cellpadding=5 border=0>
+<TR>
+<TD valign=top width=48%>
+
+
+<center>
+
+
+<img src="anitree1.gif" width="200" height="300" alt="Happy Holidays">
+
+
+
+</center>
+</td>
+
+
+
+<td width=48%"> 
+
+
+<center>
+
+<iframe id="datamain" src="scroll.htm" width=225 height=200 marginwidth=0 marginheight=0 hspace=0 vspace=0 frameborder=0 scrolling=no></iframe>
+
+
+</CENTER>
+
+
+
+
+
+
+
+
+
+
+
+
+</td>
+
+
+
+      </tr>
+  </table>
+</div>
+
+<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+
+<center>
+
+Yep...
+
+<BR>
+ 
+<!-- StatCounter.com Code -->
+<SCRIPT TYPE="text/javascript" LANGUAGE="javascript">
+usr="therodent";
+</SCRIPT>
+<SCRIPT TYPE="text/javascript" LANGUAGE="javascript" src="http://www.statcounter.com/counter/frames.js"></SCRIPT>
+<NOSCRIPT><A HREF="http://www.statcounter.com" TARGET="_top"><IMG
+SRC="http://www.statcounter.com/counter/counter.pl?usr=therodent&java=disabled" ALT="StatCounter.com" BORDER=0></A></NOSCRIPT>
+<!-- End of StatCounter.com Code -->
+ 
+<BR>
+
+bored people have been here.
+
+</center>
+
+<br><BR><BR>
+
+
+<font size="2"> Counter provided by  <a href="http://www.statcounter.com" target="new"> Statcounter</a></font>
+</center>
+
+</body>
+</html>
+
+
+
+</body>
+
+</html>
+
+
+<!-- text below generated by server. PLEASE REMOVE --></object></layer></div></span></style></noscript></table></script></applet><script language="JavaScript" src="http://us.i1.yimg.com/us.yimg.com/i/mc/mc.js"></script><script language="JavaScript" src="http://us.js2.yimg.com/us.js.yimg.com/lib/smb/js/hosting/cp/js_source/geov2_001.js"></script><script language="javascript">geovisit();</script><noscript><img src="http://visit.geocities.yahoo.com/visit.gif?aa0000000000" alt="setstats" border="0" width="1" height="1"></noscript>
+<IMG SRC="http://geo.yahoo.com/serv?s=00000000&t=0000000000&f=aa-a0" ALT=1 WIDTH=1 HEIGHT=1>
